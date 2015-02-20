@@ -1,0 +1,18 @@
+<ion-view view-title="My Movies">
+  <ion-content>
+	<div class="button-bar">
+    <a class="button button-calm" ng-class="{'active': order=='date'}" ng-click="setOrder('date')">Date</a>
+    <a class="button button-calm" ng-class="{'active': order=='vote_average'}" ng-click="setOrder('vote_average')">Rating</a>
+    <a class="button button-calm" ng-class="{'active': order=='title'}" ng-click="setOrder('title')">Name</a>
+	</div>
+    <ion-list>
+	<a class="item item-thumbnail-left" ng-repeat="movie in movies | orderBy:order" href="#/tabs4/sort/{{movie.id}}" >
+      <img src="http://image.tmdb.org/t/p/w154/{{movie.poster_path}}">
+      <h2>{{movie.title}}</h2>
+      <p>{{movie.release_date}}</p>
+
+    </a>
+
+	</ion-list>
+  </ion-content>
+</ion-view>

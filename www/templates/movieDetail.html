@@ -1,0 +1,41 @@
+
+<ion-view view-title="Movie">
+  <ion-content class="padding">
+  
+  
+   <div class="list card">
+   
+     <div class="item item-body">
+       <div class="item item-body">
+          <img class="full-image" src="http://image.tmdb.org/t/p/w342/{{movie.poster_path}}" >
+      </div>
+       <h1 style="text-align:center">{{movie.title}}</h1>
+       <p>Released: {{movie.release_date | date: "yyyy"}}</p>
+       <p>Rating: {{movie.vote_average}}</p>
+       <p>
+         {{movie.overview}}
+       </p>
+        
+     </div>
+   
+     <div class="item tabs tabs-secondary tabs-icon-left"  ng-click="favorite(movie)" >
+
+       <a class="tab-item" href="#">
+
+         <p ng-bind="nupp"></p>
+       </a>
+     </div>
+   
+     <div class="item tabs tabs-secondary tabs-icon-left" >
+
+       <a class="tab-item" href="#/tabs3/trailer/{{movie.id}}">
+   
+         <p>Watch the trailer</p>
+       </a>
+     </div>
+       <h2 style="text-align:center">Cast</h2>
+   <span ng-repeat="actor in cast"> {{actor.name}}, </span>
+   </div>
+ 
+  </ion-content>
+</ion-view>

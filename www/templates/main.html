@@ -1,0 +1,20 @@
+<ion-view view-title="Top Movies">
+  <ion-content>
+    
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="Search" ng-model="keyword" ng-change="search(keyword)">
+    
+    </label>
+    
+    <ion-list>
+      <a class="item item-thumbnail-left" ng-repeat="movie in movies" href="#/tabs1/top/{{movie.id}}" >
+        <img src="http://image.tmdb.org/t/p/w154/{{movie.poster_path}}">
+        <h2>{{movie.title}}</h2>
+        <p>{{movie.release_date}}</p>
+      </a>
+      
+    
+    </ion-list>
+  </ion-content>
+</ion-view>
